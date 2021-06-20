@@ -1,0 +1,7 @@
+name: Haunt
+version: 0.1.0
+main: me.mastrio.haunt.Haunt
+api-version: 1.17
+prefix: haunt
+authors: [ MASTRIO ]
+description: A Minecraft plugin designed to make the game MUCH harder

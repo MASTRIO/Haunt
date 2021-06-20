@@ -1,0 +1,5 @@
+me\mastrio\haunt\Events\PlayerMove.class
+me\mastrio\haunt\Events\PlayerSneak.class
+me\mastrio\haunt\Events\PlayerJoin.class
+me\mastrio\haunt\Haunt.class
+me\mastrio\haunt\Events\PlayerRightClick.class
