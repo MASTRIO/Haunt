@@ -1,15 +1,18 @@
 package me.mastrio.haunt;
 
+import me.mastrio.haunt.Commands.ResetPlayersCommand;
 import me.mastrio.haunt.Events.PlayerJoin;
 import me.mastrio.haunt.Events.PlayerMove;
 import me.mastrio.haunt.Events.PlayerRightClick;
-import me.mastrio.haunt.Events.PlayerSneak;
 import org.bukkit.plugin.java.JavaPlugin;
+import java.util.HashMap;
+import java.util.UUID;
 
-public final class Haunt extends JavaPlugin {
+public class Haunt extends JavaPlugin {
 
   // Variables
   static String loadingBar = "-----------------------------------------";
+  public static HashMap<Integer, UUID> players = new HashMap<>();
 
   // On Enable
   @Override
@@ -22,7 +25,9 @@ public final class Haunt extends JavaPlugin {
     getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
     getServer().getPluginManager().registerEvents(new PlayerMove(), this);
     getServer().getPluginManager().registerEvents(new PlayerRightClick(), this);
-    getServer().getPluginManager().registerEvents(new PlayerSneak(), this);
+
+    // Register Commands
+    this.getCommand("resetplayers").setExecutor(new ResetPlayersCommand());
 
   }
 

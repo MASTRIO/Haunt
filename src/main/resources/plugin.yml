@@ -2,6 +2,13 @@ name: Haunt
 version: ${project.version}
 main: me.mastrio.haunt.Haunt
 api-version: 1.17
-prefix: haunt
+prefix: Haunt
 authors: [ MASTRIO ]
 description: A Minecraft plugin designed to make the game MUCH harder
+
+commands:
+  resetplayers:
+    usage: /resetplayers
+    description: Resets the stats for all players on the server
+    permission: haunt.resetplayers
+    permission-message: You are not allowed to reset players >:(

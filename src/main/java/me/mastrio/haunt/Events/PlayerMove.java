@@ -3,6 +3,7 @@ package me.mastrio.haunt.Events;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.Server;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -15,26 +16,29 @@ public class PlayerMove implements Listener {
   public void onPlayerMove(PlayerMoveEvent event) {
 
     // Variables
-    Location location = event.getPlayer().getLocation().clone().subtract(0, 1, 0);
+    Location location = event.getPlayer().getLocation().clone();
     Block block = location.getBlock();
-    int theBlock = 15;
 
     // If light level too low, die
-    if (!(block.getType() == Material.AIR || block.getType() == Material.CAVE_AIR || block.getType() == Material.VOID_AIR)) {
+    if (block.getType() != Material.AIR || block.getType() != Material.CAVE_AIR || block.getType() != Material.VOID_AIR) {
 
-      if (location != null) {
+      if (block.getLightFromSky() != 15) {
 
-        theBlock = location.getBlock().getLightLevel();
+        if (block.getLightFromBlocks() <= 3) {
 
-      }
+          event.getPlayer().sendMessage(ChatColor.RED + "You don't want to be alone in the dark...");
+          event.getPlayer().setHealth(0);
 
-      if (!(theBlock == 0)) {
-
-        event.getPlayer().sendMessage(String.valueOf(block.getLightLevel()));
-        event.getPlayer().sendMessage(ChatColor.RED + "The dark is a scary place...");
-        event.getPlayer().setHealth(0);
+        }
 
       }
+
+    }
+
+    // If sprinting
+    if (event.getPlayer().isSprinting()) {
+
+      event.getPlayer().setFoodLevel(event.getPlayer().getFoodLevel() - 1);
 
     }
 
