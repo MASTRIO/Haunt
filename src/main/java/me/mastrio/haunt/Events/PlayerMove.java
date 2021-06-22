@@ -1,9 +1,8 @@
 package me.mastrio.haunt.Events;
 
-import org.bukkit.ChatColor;
+import me.mastrio.haunt.Haunt;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.Server;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -26,8 +25,14 @@ public class PlayerMove implements Listener {
 
         if (block.getLightFromBlocks() <= 3) {
 
-          event.getPlayer().sendMessage(ChatColor.RED + "You don't want to be alone in the dark...");
-          event.getPlayer().setHealth(0);
+          Haunt.darknessDeathMessages(event.getPlayer());
+
+          Haunt.randomNumber = (int) ((Math.random() * ((3 - 1) + 1)) + 1);
+          if (Haunt.randomNumber == 1) {
+
+            event.getPlayer().setHealth(event.getPlayer().getHealth() - 1);
+
+          }
 
         }
 
@@ -38,7 +43,12 @@ public class PlayerMove implements Listener {
     // If sprinting
     if (event.getPlayer().isSprinting()) {
 
-      event.getPlayer().setFoodLevel(event.getPlayer().getFoodLevel() - 1);
+      Haunt.randomNumber = (int) ((Math.random() * ((3 - 1) + 1)) + 1);
+      if (Haunt.randomNumber == 1) {
+
+        event.getPlayer().setFoodLevel(event.getPlayer().getFoodLevel() - 1);
+
+      }
 
     }
 
