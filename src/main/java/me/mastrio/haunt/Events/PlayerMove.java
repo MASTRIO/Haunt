@@ -27,8 +27,8 @@ public class PlayerMove implements Listener {
 
           Haunt.darknessDeathMessages(event.getPlayer());
 
-          Haunt.randomNumber = (int) ((Math.random() * ((3 - 1) + 1)) + 1);
-          if (Haunt.randomNumber == 1) {
+          int chanceToLoseHealth = (int) ((Math.random() * ((3 - 1) + 1)) + 1);
+          if (chanceToLoseHealth == 1) {
 
             event.getPlayer().setHealth(event.getPlayer().getHealth() - 1);
 
@@ -43,8 +43,8 @@ public class PlayerMove implements Listener {
     // If sprinting
     if (event.getPlayer().isSprinting()) {
 
-      Haunt.randomNumber = (int) ((Math.random() * ((3 - 1) + 1)) + 1);
-      if (Haunt.randomNumber == 1) {
+      int chanceToLoseHunger = (int) ((Math.random() * ((3 - 1) + 1)) + 1);
+      if (chanceToLoseHunger == 1) {
 
         event.getPlayer().setFoodLevel(event.getPlayer().getFoodLevel() - 1);
 

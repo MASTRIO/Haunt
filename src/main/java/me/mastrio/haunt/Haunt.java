@@ -1,9 +1,11 @@
 package me.mastrio.haunt;
 
 import me.mastrio.haunt.Commands.ResetPlayersCommand;
+import me.mastrio.haunt.Events.BlockPlaced;
 import me.mastrio.haunt.Events.PlayerJoin;
 import me.mastrio.haunt.Events.PlayerMove;
 import me.mastrio.haunt.Events.PlayerRightClick;
+import me.mastrio.haunt.Inventories.CampfireGUI;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -15,7 +17,6 @@ public class Haunt extends JavaPlugin {
   // Variables
   static String loadingBar = "-----------------------------------------";
   public static HashMap<Integer, UUID> players = new HashMap<>();
-  public static int randomNumber;
 
   // On Enable
   @Override
@@ -28,6 +29,8 @@ public class Haunt extends JavaPlugin {
     getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
     getServer().getPluginManager().registerEvents(new PlayerMove(), this);
     getServer().getPluginManager().registerEvents(new PlayerRightClick(), this);
+    getServer().getPluginManager().registerEvents(new BlockPlaced(), this);
+    getServer().getPluginManager().registerEvents(new CampfireGUI(), this);
 
     // Register Commands
     this.getCommand("resetplayers").setExecutor(new ResetPlayersCommand());
@@ -46,8 +49,8 @@ public class Haunt extends JavaPlugin {
   // Darkness death messages
   public static void darknessDeathMessages(Player player) {
 
-    randomNumber = (int) ((Math.random() * ((5 - 1) + 1)) + 1);
-    switch (randomNumber) {
+    int messageType = (int) ((Math.random() * ((10 - 1) + 1)) + 1);
+    switch (messageType) {
 
       case 1 -> {
 
@@ -76,6 +79,36 @@ public class Haunt extends JavaPlugin {
       case 5 -> {
 
         player.getPlayer().sendMessage(ChatColor.RED + "Get haunted lol");
+
+      }
+
+      case 6 -> {
+
+        player.getPlayer().sendMessage(ChatColor.RED + "Rage quit yet?");
+
+      }
+
+      case 7 -> {
+
+        player.getPlayer().sendMessage(ChatColor.RED + "Ah yes, the sweet sound of death...");
+
+      }
+
+      case 8 -> {
+
+        player.getPlayer().sendMessage(ChatColor.RED + "*evil laugh*");
+
+      }
+
+      case 9 -> {
+
+        player.getPlayer().sendMessage(ChatColor.RED + "Self report");
+
+      }
+
+      case 10 -> {
+
+        player.getPlayer().sendMessage(ChatColor.RED + "Don't stray too far out of the light...");
 
       }
 
