@@ -1,12 +1,14 @@
 package me.mastrio.haunt;
 
+import me.mastrio.haunt.Commands.GetSanityCommand;
 import me.mastrio.haunt.Commands.ResetPlayersCommand;
-import me.mastrio.haunt.Events.BlockPlaced;
-import me.mastrio.haunt.Events.PlayerJoin;
-import me.mastrio.haunt.Events.PlayerMove;
-import me.mastrio.haunt.Events.PlayerRightClick;
+import me.mastrio.haunt.Events.*;
 import me.mastrio.haunt.Inventories.CampfireGUI;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.boss.BarColor;
+import org.bukkit.boss.BarStyle;
+import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.util.HashMap;
@@ -17,23 +19,41 @@ public class Haunt extends JavaPlugin {
   // Variables
   static String loadingBar = "-----------------------------------------";
   public static HashMap<Integer, UUID> players = new HashMap<>();
+  public static HashMap<UUID, Integer> sanityMeter = new HashMap<>();
+  public static HashMap<UUID, Boolean> hasJoinedBefore = new HashMap<>();
 
   // On Enable
   @Override
   public void onEnable() {
 
     // Welcome!
-    System.out.println(loadingBar + "\nWelcome to the haunt, may this life be your last...\n" + loadingBar);
+    System.out.println(loadingBar + "\nWelcome to the haunt, may this life be your last...");
 
     // Register Events
+    System.out.println("Registering Events");
     getServer().getPluginManager().registerEvents(new PlayerJoin(), this);
     getServer().getPluginManager().registerEvents(new PlayerMove(), this);
     getServer().getPluginManager().registerEvents(new PlayerRightClick(), this);
+    getServer().getPluginManager().registerEvents(new PlayerDeath(), this);
     getServer().getPluginManager().registerEvents(new BlockPlaced(), this);
     getServer().getPluginManager().registerEvents(new CampfireGUI(), this);
 
     // Register Commands
+    System.out.println("Registering Commands");
     this.getCommand("resetplayers").setExecutor(new ResetPlayersCommand());
+    this.getCommand("sanity").setExecutor(new GetSanityCommand());
+
+    // Set Sanity
+    System.out.println("Setting up sanity meters");
+
+    // Recipe Managers
+    System.out.println("Initializing CampfireRecipeManager");
+
+    // GUI's
+    System.out.println("Initializing CampfireGUI");
+
+    // Close
+    System.out.println(loadingBar);
 
   }
 
@@ -43,76 +63,6 @@ public class Haunt extends JavaPlugin {
 
     // Bye Bye
     System.out.println(loadingBar + "\nI'll be waiting for your return...\n" + loadingBar);
-
-  }
-
-  // Darkness death messages
-  public static void darknessDeathMessages(Player player) {
-
-    int messageType = (int) ((Math.random() * ((10 - 1) + 1)) + 1);
-    switch (messageType) {
-
-      case 1 -> {
-
-        player.getPlayer().sendMessage(ChatColor.RED + "You don't want to be alone in the dark...");
-
-      }
-
-      case 2 -> {
-
-        player.getPlayer().sendMessage(ChatColor.RED + "AAAAHHH SCARY LOW LIGHT LEVEL NOOOOOOOOOOO!");
-
-      }
-
-      case 3 -> {
-
-        player.getPlayer().sendMessage(ChatColor.RED + "AMONGUS!!!!!!!!!!!!");
-
-      }
-
-      case 4 -> {
-
-        player.getPlayer().sendMessage(ChatColor.RED + "The dark is a scary place...");
-
-      }
-
-      case 5 -> {
-
-        player.getPlayer().sendMessage(ChatColor.RED + "Get haunted lol");
-
-      }
-
-      case 6 -> {
-
-        player.getPlayer().sendMessage(ChatColor.RED + "Rage quit yet?");
-
-      }
-
-      case 7 -> {
-
-        player.getPlayer().sendMessage(ChatColor.RED + "Ah yes, the sweet sound of death...");
-
-      }
-
-      case 8 -> {
-
-        player.getPlayer().sendMessage(ChatColor.RED + "*evil laugh*");
-
-      }
-
-      case 9 -> {
-
-        player.getPlayer().sendMessage(ChatColor.RED + "Self report");
-
-      }
-
-      case 10 -> {
-
-        player.getPlayer().sendMessage(ChatColor.RED + "Don't stray too far out of the light...");
-
-      }
-
-    }
 
   }
 

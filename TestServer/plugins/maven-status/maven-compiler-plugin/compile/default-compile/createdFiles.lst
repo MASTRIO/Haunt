@@ -1,5 +1,11 @@
-me\mastrio\haunt\Events\PlayerMove.class
-me\mastrio\haunt\Events\PlayerJoin.class
+me\mastrio\haunt\Commands\GetSanityCommand.class
+me\mastrio\haunt\Events\PlayerDeath.class
+me\mastrio\haunt\Inventories\CampfireGUI.class
 me\mastrio\haunt\Haunt.class
 me\mastrio\haunt\Events\PlayerRightClick.class
+me\mastrio\haunt\Recipes\CampfireRecipeManager.class
+me\mastrio\haunt\Events\PlayerMove.class
+me\mastrio\haunt\Sanity\PlayerSanityManager.class
+me\mastrio\haunt\Events\PlayerJoin.class
+me\mastrio\haunt\Events\BlockPlaced.class
 me\mastrio\haunt\Commands\ResetPlayersCommand.class

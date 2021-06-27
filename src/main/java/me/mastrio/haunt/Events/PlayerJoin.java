@@ -81,6 +81,21 @@ public class PlayerJoin implements Listener {
     // Add player to player list
     Haunt.players.put(Haunt.players.size() + 1, event.getPlayer().getUniqueId());
 
+    // Add player to hasJoined HashMap
+    Haunt.hasJoinedBefore.putIfAbsent(event.getPlayer().getUniqueId(), false);
+
+    // Has Joined before
+    if (Haunt.hasJoinedBefore.get(event.getPlayer().getUniqueId())) {
+
+     event.getPlayer().sendMessage(ChatColor.AQUA + "Welcome back " + event.getPlayer() + "!");
+
+    } else {
+
+      Haunt.sanityMeter.put(event.getPlayer().getUniqueId(), 150);
+      Haunt.hasJoinedBefore.put(event.getPlayer().getUniqueId(), true);
+
+    }
+
   }
 
 }

@@ -22,6 +22,8 @@ public class ResetPlayersCommand implements CommandExecutor {
       Bukkit.getPlayer(Haunt.players.get(playerToGet)).setFireTicks(0);
       Bukkit.getPlayer(Haunt.players.get(playerToGet)).setHealth(20);
       Bukkit.getPlayer(Haunt.players.get(playerToGet)).setLevel(0);
+      Haunt.hasJoinedBefore.put(Haunt.players.get(playerToGet), false);
+      Haunt.sanityMeter.put(Haunt.players.get(playerToGet), 150);
 
     }
 

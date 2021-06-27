@@ -12,3 +12,6 @@ commands:
     description: Resets the stats for all players on the server
     permission: haunt.resetplayers
     permission-message: You are not allowed to reset players >:(
+  sanity:
+    usage: /sanity
+    description: Shows you your sanity

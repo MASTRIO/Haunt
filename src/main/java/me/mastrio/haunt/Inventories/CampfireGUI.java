@@ -37,7 +37,7 @@ public class CampfireGUI implements Listener {
 
     // Row 1
     campfireGUI.addItem(createCampfireRecipe(Material.TORCH, 1, "Torch", "An easy way to craft torches", "Stick x1"));
-    campfireGUI.addItem(new ItemStack(Material.AIR));
+    campfireGUI.addItem(createCampfireRecipe(Material.FIRE_CHARGE, 3, "Fire Charge", "A perfect temporary torch", "Stone x1, Sticks x4"));
     campfireGUI.addItem(new ItemStack(Material.AIR));
     campfireGUI.addItem(new ItemStack(Material.AIR));
     campfireGUI.addItem(new ItemStack(Material.AIR));
@@ -62,46 +62,11 @@ public class CampfireGUI implements Listener {
     campfireGUI.addItem(newGUIitem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
     campfireGUI.addItem(newGUIitem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
     campfireGUI.addItem(newGUIitem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
+    campfireGUI.addItem(newGUIitem(Material.RED_STAINED_GLASS_PANE, "Close", ""));
     campfireGUI.addItem(newGUIitem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
     campfireGUI.addItem(newGUIitem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
     campfireGUI.addItem(newGUIitem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
     campfireGUI.addItem(newGUIitem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
-    campfireGUI.addItem(newGUIitem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
-
-    /*
-    // Row 1
-    campfireGUI.addItem(createGuiItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
-    campfireGUI.addItem(createGuiItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
-    campfireGUI.addItem(new ItemStack(Material.AIR));
-    campfireGUI.addItem(new ItemStack(Material.AIR));
-    campfireGUI.addItem(new ItemStack(Material.AIR));
-    campfireGUI.addItem(createGuiItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
-    campfireGUI.addItem(createGuiItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
-    campfireGUI.addItem(createGuiItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
-    campfireGUI.addItem(createGuiItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
-
-    // Row 2
-    campfireGUI.addItem(createGuiItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
-    campfireGUI.addItem(createGuiItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
-    campfireGUI.addItem(new ItemStack(Material.AIR));
-    campfireGUI.addItem(new ItemStack(Material.AIR));
-    campfireGUI.addItem(new ItemStack(Material.AIR));
-    campfireGUI.addItem(createGuiItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
-    campfireGUI.addItem(createGuiItem(Material.FIRE_CHARGE, "Craft", ""));
-    campfireGUI.addItem(new ItemStack(Material.AIR));
-    campfireGUI.addItem(createGuiItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
-
-    // Row 3
-    campfireGUI.addItem(createGuiItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
-    campfireGUI.addItem(createGuiItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
-    campfireGUI.addItem(new ItemStack(Material.AIR));
-    campfireGUI.addItem(new ItemStack(Material.AIR));
-    campfireGUI.addItem(new ItemStack(Material.AIR));
-    campfireGUI.addItem(createGuiItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
-    campfireGUI.addItem(createGuiItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
-    campfireGUI.addItem(createGuiItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
-    campfireGUI.addItem(createGuiItem(Material.LIGHT_GRAY_STAINED_GLASS_PANE, "", ""));
-    */
 
   }
 
@@ -155,18 +120,19 @@ public class CampfireGUI implements Listener {
     // Cancel stuff
     if (event.getInventory() != campfireGUI) return;
     event.setCancelled(true);
-
-    // Get the item that was clicked
     final ItemStack clickedItem = event.getCurrentItem();
-
-    // Make sure the clicked item is not null
     if (clickedItem == null || clickedItem.getType().isAir()) return;
-
-    // Get player
     final Player player = (Player) event.getWhoClicked();
 
     // TEMP
     player.sendMessage("You clicked at slot " + event.getRawSlot());
+
+    // Close inventory
+    if (event.getRawSlot() == 22) {
+
+      event.getWhoClicked().closeInventory();
+
+    }
 
     // Recipe Manager
     CampfireRecipeManager recipeManager = new CampfireRecipeManager(event.getWhoClicked());
@@ -177,6 +143,13 @@ public class CampfireGUI implements Listener {
       case 0 -> {
 
         recipeManager.torch();
+
+      }
+
+      // Fire Charge
+      case 1 -> {
+
+        recipeManager.fireCharge();
 
       }
 
