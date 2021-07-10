@@ -19,17 +19,19 @@
   "C:\\Users\\hclark7\\Documents\\GitHub\\Haunt\\Haunt\\src": {
     "files": {
       "pack.mcmeta": "22fe683fb708218dc3039546da39ac0e",
-      "data\\haunt\\functions\\block_effect_handler\\soul_soil_slowing.mcfunction": "43db4cce99f08c8254346c31a70e87c1",
-      "data\\haunt\\functions\\debug\\kill_non_player.mcfunction": "74e88439f7e0afda6e0ebe28429b8fa3",
       "data\\haunt\\functions\\load.mcfunction": "084c2babbf89f6f09ab259eb2852c186",
       "data\\haunt\\functions\\die_in_the_dark.mcfunction": "a673b51f23fad0cdc92e715cb9c519c7",
       "data\\haunt\\functions\\start.mcfunction": "9e3daaff8a2ed17352c735027613cfd9",
       "data\\haunt\\functions\\five_second_loop.mcfunction": "216919cfc3a4225a1fb43d6b9b537df1",
       "data\\haunt\\functions\\five_second_loop\\__sleep.mcfunction": "c0d14b782e51fd1bdca5a192952ee1a5",
       "data\\haunt\\functions\\get_players_sanity.mcfunction": "36dac68795f31f609c125f3208dc5cc2",
-      "data\\haunt\\predicates\\predicate_manager\\is_in_the_dark.json": "b53e69a1333128057fabfb83e7a91cf0",
-      "data\\minecraft\\tags\\functions\\tick.json": "ddf852007a9e723d5cf08cdd497e6e71",
-      "data\\minecraft\\tags\\functions\\load.json": "43345f916b57777d942050a15f8508a7"
+      "data\\haunt\\functions\\block_effect_handler\\soul_soil_slowing.mcfunction": "d99aa8a126094e91270fb53db6c6fb9a",
+      "data\\haunt\\functions\\block_effect_handler\\campfire_crisping.mcfunction": "5f8fbc23207c3f67a00f011a0d839291",
+      "data\\haunt\\functions\\debug\\kill_non_player.mcfunction": "74e88439f7e0afda6e0ebe28429b8fa3",
+      "data\\haunt\\functions\\potion_effect_manager\\soul_soil.mcfunction": "03c41f668c0d0087204d55097ad51676",
+      "data\\haunt\\predicates\\predicate_manager\\is_in_the_dark.json": "6972588e2ed5cd33e2916de41cc0eeae",
+      "data\\minecraft\\tags\\functions\\load.json": "43345f916b57777d942050a15f8508a7",
+      "data\\minecraft\\tags\\functions\\tick.json": "df616efe44a2ffc0b880dfe283d13dd3"
     },
     "resultFolder": "C:\\Users\\hclark7\\AppData\\Roaming\\.minecraft\\saves\\Haunt Testing World\\datapacks\\Haunt"
   }

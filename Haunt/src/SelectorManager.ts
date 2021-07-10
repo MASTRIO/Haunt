@@ -12,3 +12,6 @@ export const AllPlayers = Selector('@a')
 
 // Yourself
 export const Yourself = Selector('@s')
+
+// Nearest Player
+export const NearestPlayer = Selector('@p')

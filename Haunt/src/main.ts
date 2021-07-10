@@ -1,7 +1,8 @@
 import { effect, execute, MCFunction, Objective, playsound, Predicate, rel, say, sleep, tellraw, time, Variable, _, Selector } from "sandstone";
-import { PlayerInTheDarkness } from "./SelectorManager";
+import { PlayerInTheDarkness, AllPlayers } from "./SelectorManager";
 
 // Variables
+export const namespace = 'haunt'
 const version = 'v0.1.0'
 
 // Load
@@ -27,7 +28,7 @@ MCFunction('start', () => {
         color: "red"
     }])
     playsound('minecraft:block.beacon.deactivate', 'ambient', '@a', rel(0, 0, 0), 1, 1, 1)
-    effect.give('@a', 'minecraft:blindness', 2, 1, true)
+    effect.give(AllPlayers, 'minecraft:blindness', 2, 1, true)
     // Set base sanity
     //playersSanity.set(150)
     // Start second loop
