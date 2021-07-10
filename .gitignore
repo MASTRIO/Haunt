@@ -111,3 +111,9 @@ buildNumber.properties
 
 # Common working directory
 run/
+
+# Remove test plugin
+OrigionalPlugin/TestServer
+
+# Why node_modules exist?
+Haunt/node_modules
