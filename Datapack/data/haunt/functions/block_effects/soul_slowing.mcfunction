@@ -1,0 +1,1 @@
+effect give @p minecraft:slowness 1 4 true

@@ -1,0 +1,1 @@
+give @p blaze_spawn_egg{EntityTag:{id:"minecraft:armor_stand",PersistenceRequired:1b,NoGravity:1b,Fire:1277951,Invulnerable:1,Tags:["haunt.darkness.bonfire.spawner"]}}

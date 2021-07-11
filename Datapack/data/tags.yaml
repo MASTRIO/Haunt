@@ -1,0 +1,9 @@
+# /tag tags
+haunt:
+  main:
+  darkness:
+    bonfire:
+      spawner
+      marker
+
+# NBT tags
