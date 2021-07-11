@@ -1,0 +1,13 @@
+{
+  "pack": {
+    "pack_format": 6,
+    "description": [
+      "Makes the game ",
+      {
+        "text": "MUCH",
+        "color": "gold"
+      },
+      " harder "
+    ]
+  }
+}
