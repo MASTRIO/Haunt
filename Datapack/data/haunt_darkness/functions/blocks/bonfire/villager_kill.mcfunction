@@ -1,5 +1,6 @@
 # Drop bonfire item
-loot spawn ~ ~ ~ loot haunt_darkness:bonfire
+loot spawn ~ ~0.5 ~ loot haunt_darkness:bonfire
 
 # Kill the villager
-kill @e[tag=haunt.darkness.bonfire.marker, sort=nearest, limit=1]
+tp @e[tag=haunt.darkness.bonfire.trader, sort=nearest, limit=1] ~ 0 ~
+kill @e[tag=haunt.darkness.bonfire.trader, sort=nearest, limit=1]

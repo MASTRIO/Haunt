@@ -1,16 +1,31 @@
 {
-    "type": "minecraft:command",
-    "pools": [
-      {
-        "rolls": 1,
-        "bonus_rolls": 0,
-        "entries": [
-          {
-            "type": "minecraft:item",
-            "name": "minecraft:blaze_spawn_egg",
-            "nbt": "{EntityTag:{id:"minecraft:armor_stand",PersistenceRequired:1b,NoGravity:1b,Fire:1277951,Invulnerable:1,Tags:["haunt.darkness.bonfire.spawner"]}}"
+  "pools": [{
+    "rolls": 1,
+    "entries": [{
+      "type": "minecraft:item",
+      "weight": 1,
+      "functions": [{
+          "function": "minecraft:set_nbt",
+          "tag": "{EntityTag:{PersistenceRequired:1b,NoGravity:1b,Invulnerable:1,Tags:[\"haunt.darkness.bonfire.spawner\"]}}"
+        },
+        {
+          "function": "minecraft:set_name",
+          "name": {
+            "text": "Bonfire",
+            "italic": false
           }
-        ]
-      }
-    ]
-  }
+        },
+        {
+          "function": "minecraft:set_lore",
+          "lore": [{
+              "text": "An upgraded version of a campfire\nAllows you to craft new things",
+              "color": "white",
+              "italic": false
+            }
+          ]
+        }
+      ],
+      "name": "minecraft:armor_stand"
+    }]
+  }]
+}
