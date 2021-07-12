@@ -4,6 +4,7 @@ haunt:
   darkness:
     bonfire:
       spawner
-      marker
+      trader:
+        is_loaded
 
 # NBT tags
