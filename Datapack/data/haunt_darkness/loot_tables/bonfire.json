@@ -11,16 +11,27 @@
         {
           "function": "minecraft:set_name",
           "name": {
-            "text": "Bonfire",
+            "translate": "block.haunt.darkness.bonfire.name",
             "italic": false
           }
         },
         {
           "function": "minecraft:set_lore",
           "lore": [{
-              "text": "An upgraded version of a campfire\nAllows you to craft new things",
-              "color": "white",
+              "translate": "block.haunt.darkness.bonfire.lore.one",
+              "color": "gray",
               "italic": false
+            },
+            {
+              "translate": "block.haunt.darkness.bonfire.lore.two",
+              "color": "gray",
+              "italic": false
+            },
+            {
+              "text": ""
+            },
+            {
+              "translate": "pack.haunt.item.text"
             }
           ]
         }

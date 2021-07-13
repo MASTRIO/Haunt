@@ -1,0 +1,9 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "item/structure_void"
+    },
+    "overrides":[
+     {"predicate": {"custom_model_data":7897891}, "model":"haunt:blocks/bonfire_catagories/general"}
+     ]
+}
