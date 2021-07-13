@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "minecraft:item/campfire",
+      "layer1": "haunt:items/bonfire_stones"
+    }
+  }

@@ -1,5 +1,5 @@
 # Drop bonfire item
-loot spawn ~ ~0.5 ~ loot haunt_darkness:bonfire
+loot spawn ~ ~0.7 ~ loot haunt_darkness:bonfire
 
 # Kill the villager
 tp @e[tag=haunt.darkness.bonfire.trader, sort=nearest, limit=1] ~ 0 ~
