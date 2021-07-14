@@ -1,0 +1,32 @@
+{
+  "pools": [{
+    "rolls": 1,
+    "entries": [{
+      "type": "minecraft:item",
+      "weight": 1,
+      "functions": [{
+          "function": "minecraft:set_nbt",
+          "tag": "{CustomModelData:7897891,AttributeModifiers:[{AttributeName:\"generic.attack_speed\",Amount:5,Name:\"generic.attack_speed\",UUID:[I;-121614,8473,122313,-16946]}],HideFlags:32,HideAttributes:32}"
+        },
+        {
+          "function": "minecraft:set_name",
+          "name": {
+            "translate": "item.haunt.darkness.wooden_dagger.name",
+            "italic": false
+          }
+        },
+        {
+          "function": "minecraft:set_lore",
+          "lore": [{
+              "text": ""
+            },
+            {
+              "translate": "pack.haunt.item.text"
+            }
+          ]
+        }
+      ],
+      "name": "minecraft:wooden_sword"
+    }]
+  }]
+}

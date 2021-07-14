@@ -1,0 +1,47 @@
+{
+	"credit": "Made with Blockbench",
+	"elements": [
+		{
+			"name": "Background",
+			"from": [-16, -1, 0],
+			"to": [24, 20, 0],
+			"faces": {
+				"north": {"uv": [0, 0, 10, 5], "texture": "#0"},
+				"east": {"uv": [0, 0, 0, 5], "texture": "#0"},
+				"south": {"uv": [0, 5, 10, 10], "texture": "#0"},
+				"west": {"uv": [0, 0, 0, 5], "texture": "#0"},
+				"up": {"uv": [10, 0, 0, 0], "texture": "#0"},
+				"down": {"uv": [10, 0, 0, 0], "texture": "#0"}
+			}
+		},
+		{
+			"name": "Icon",
+			"from": [-5, 0, -1],
+			"to": [13, 20, -1],
+			"faces": {
+				"north": {"uv": [0, 0, 10, 5], "texture": "#1"},
+				"east": {"uv": [0, 0, 0, 5], "texture": "#1"},
+				"south": {"uv": [0, 5, 10, 10], "texture": "#1"},
+				"west": {"uv": [0, 0, 0, 5], "texture": "#1"},
+				"up": {"uv": [10, 0, 0, 0], "texture": "#1"},
+				"down": {"uv": [10, 0, 0, 0], "texture": "#1"}
+			}
+		}
+	],
+	"gui_light": "front",
+	"display": {
+		"gui": {
+			"rotation": [-180, 0, 0],
+			"translation": [9.5, 0.75, 0],
+			"scale": [2.2, 1, 1]
+		}
+	},
+	"groups": [
+		{
+			"name": "Catagory",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1]
+		}
+	]
+}

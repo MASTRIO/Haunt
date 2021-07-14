@@ -4,6 +4,6 @@
         "layer0": "item/armor_stand"
     },
     "overrides":[
-     {"predicate": {"custom_model_data":7897891}, "model":"haunt:blocks/bonfire"}
+     {"predicate": {"custom_model_data":7897891}, "model":"haunt:items/bonfire"}
      ]
 }

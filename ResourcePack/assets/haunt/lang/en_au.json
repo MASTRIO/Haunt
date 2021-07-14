@@ -1,6 +1,13 @@
 {
     "pack.haunt.item.text": "§9§oHaunt",
+    "catagory.haunt.bonfire.general": "§kH §r§nGeneral§r §kH",
+    "catagory.haunt.bonfire.tools": "§kH §r§nTools§r §kH",
+    "catagory.haunt.bonfire.weapons": "§kH §r§nWeapons§r §kH",
+    "catagory.haunt.bonfire.defence": "§kH §r§nDefence§r §kH",
+    "catagory.haunt.bonfire.magical": "§kH §r§nMagical§r §kH",
+    "catagory.haunt.bonfire.food": "§kH §r§nFood§r §kH",
     "block.haunt.darkness.bonfire.name": "Bonfire",
     "block.haunt.darkness.bonfire.lore.one": "An upgraded version of a campfire,",
-    "block.haunt.darkness.bonfire.lore.two": "Allows you to craft new things"
+    "block.haunt.darkness.bonfire.lore.two": "Allows you to craft new things",
+    "item.haunt.darkness.wooden_dagger.name": "Wooden Dagger"
 }

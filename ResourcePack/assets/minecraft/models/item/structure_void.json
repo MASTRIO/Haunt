@@ -4,6 +4,11 @@
         "layer0": "item/structure_void"
     },
     "overrides":[
-     {"predicate": {"custom_model_data":7897891}, "model":"haunt:blocks/bonfire_catagories/general"}
+     {"predicate": {"custom_model_data":7897891}, "model":"haunt:items/bonfire_catagories/general"},
+     {"predicate": {"custom_model_data":7897892}, "model":"haunt:items/bonfire_catagories/tools"},
+     {"predicate": {"custom_model_data":7897893}, "model":"haunt:items/bonfire_catagories/weapons"},
+     {"predicate": {"custom_model_data":7897894}, "model":"haunt:items/bonfire_catagories/defence"},
+     {"predicate": {"custom_model_data":7897895}, "model":"haunt:items/bonfire_catagories/magical"},
+     {"predicate": {"custom_model_data":7897896}, "model":"haunt:items/bonfire_catagories/food"}
      ]
 }

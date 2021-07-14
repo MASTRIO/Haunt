@@ -1,0 +1,8 @@
+{
+	"parent": "haunt:items/bonfire_catagories/base",
+	"texture_size": [64, 64],
+	"textures": {
+		"0": "haunt:bonfire_catagories/background",
+		"1": "haunt:bonfire_catagories/food"
+	}
+}

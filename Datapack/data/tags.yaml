@@ -1,6 +1,5 @@
 # /tag tags
 haunt:
-  main:
   darkness:
     bonfire:
       spawner
@@ -8,3 +7,7 @@ haunt:
         is_loaded
 
 # NBT tags
+haunt:
+  darkness:
+    giveItem:
+      woodenDagger
